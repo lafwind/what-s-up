@@ -19,7 +19,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, notice: "Create successfully~~"
     else
-      render 'new', notice: "Something wrong here!!"
+      flash.now[:alert] = "Something wrong here!!"
+      render 'new'
     end
   end
 
@@ -30,7 +31,8 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to @post, notice: "Update successfully~~"
     else
-      render 'edit', notice: "Something wrong here!!"
+      flash.now[:alert] = "Something wrong here!!"
+      render 'edit'
     end
   end
 
