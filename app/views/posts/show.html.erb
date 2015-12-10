@@ -1,6 +1,10 @@
 <p><%= @post.title %></p>
 <p><%= @post.url %></p>
 <p><%= @post.description %></p>
+
 <%= link_to "home", posts_path %>
-<%= link_to "edit", edit_post_path %>
-<%= link_to "delete", post_path, method: :delete, data: { confirm: "Are you sure?" } %>
+
+<% if user_signed_in? && @post.user_id == current_user.id %>
+  <%= link_to "edit", edit_post_path %>
+  <%= link_to "delete", post_path, method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>

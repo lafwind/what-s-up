@@ -23,4 +23,6 @@ class Post < ActiveRecord::Base
   validates :description, length: { maximum: 200,
                                     too_long: "%{count} characters is the maximum allowed"
                                   }
+
+  belongs_to :user
 end

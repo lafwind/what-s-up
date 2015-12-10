@@ -1,0 +1,8 @@
+<h3> Show </h3>
+<% @posts.each do |post| %>
+  <div>
+    <span><%= post.title %></span>
+    <span><%= post.url %></span>
+    <span><%= post.description %></span>
+  </div>
+<% end %>

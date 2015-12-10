@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
 
   before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :judge_user, only: [:edit, :update, :destroy]
 
 
   def index
@@ -15,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
     if @post.save
       redirect_to @post, notice: "Create successfully~~"
     else
@@ -49,5 +51,12 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:title, :url, :description)
+    end
+
+    def judge_user
+      find_post
+      if @post.user_id != current_user.id
+        redirect_to root_path
+      end
     end
 end
