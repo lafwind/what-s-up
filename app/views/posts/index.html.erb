@@ -6,7 +6,7 @@
   </div>
 
   <ul>
-    <li><%= link_to "#{post.user.email}", user_path(post.user) %></li>
+    <li><%= link_to "#{ post.user.name }", user_path(post.user) %></li>
     <li><%= link_to "show", post_path(post) %></li>
 
     <% if user_signed_in?  %>
