@@ -1,4 +1,6 @@
 <h3> Show </h3>
+<%= gravatar_for(@user)%>
+
 <% @posts.each do |post| %>
   <div>
     <span><%= post.title %></span>
