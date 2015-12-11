@@ -6,11 +6,21 @@
   </div>
 
   <ul>
+    <li><%= link_to "#{post.user.email}", user_path(post.user) %></li>
     <li><%= link_to "show", post_path(post) %></li>
 
-    <% if user_signed_in? && post.user_id == current_user.id %>
-      <li><%= link_to "edit", edit_post_path(post) %></li>
-      <li><%= link_to "delete", post_path(post), method: :delete, data: { confirm: "Are you sure?"} %></li>
+    <% if user_signed_in?  %>
+      <li>
+        <%= link_to like_post_path(post) do%>
+          "Like"
+          <%= post.get_likes.size %>
+        <% end %>
+      </li>
+
+      <% if post.user_id == current_user.id %>
+        <li><%= link_to "edit", edit_post_path(post) %></li>
+        <li><%= link_to "delete", post_path(post), method: :delete, data: { confirm: "Are you sure?"} %></li>
+      <% end %>
     <% end %>
   </ul>
 <% end %>
