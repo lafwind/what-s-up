@@ -13,6 +13,12 @@
   <% end %>
 
   <% if @post.user_id == current_user.id %>
+
+    <% if @post.share %>
+      <%= link_to "unshare", share_post_path(@post), method: :put %>
+    <% else %>
+      <%= link_to "share", share_post_path(@post), method: :put %>
+    <% end %>
     <%= link_to "edit", edit_post_path %>
     <%= link_to "delete", post_path, method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
