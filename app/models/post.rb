@@ -10,6 +10,7 @@
 #  updated_at  :datetime         not null
 #  user_id     :integer
 #  share       :boolean          default(FALSE)
+#  group_id    :integer
 #
 
 class Post < ActiveRecord::Base
@@ -32,6 +33,7 @@ class Post < ActiveRecord::Base
             }
 
   belongs_to :user
+  belongs_to :group
 
   acts_as_votable
 end

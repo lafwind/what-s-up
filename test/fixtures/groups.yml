@@ -1,26 +1,23 @@
 # == Schema Information
 #
-# Table name: posts
+# Table name: groups
 #
 #  id          :integer          not null, primary key
-#  title       :string
-#  url         :string
+#  name        :string
 #  description :text
+#  user_id     :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  user_id     :integer
-#  share       :boolean          default(FALSE)
-#  group_id    :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  url: MyString
+  name: MyString
   description: MyText
+  user_id: 1
 
 two:
-  title: MyString
-  url: MyString
+  name: MyString
   description: MyText
+  user_id: 1
