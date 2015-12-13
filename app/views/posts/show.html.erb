@@ -1,6 +1,5 @@
-<p><%= @post.title %></p>
-<p><%= @post.url %></p>
-<p><%= @post.description %></p>
+<%= link_to @post.title, format_url(@post.url) %>
+<p><%= @post.description%></p>
 
 <%= link_to "home", posts_path %>
 <%= link_to "#{ @post.user.name }", user_path(@post.user) %>

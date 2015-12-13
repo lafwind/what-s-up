@@ -80,12 +80,12 @@ class PostsController < ApplicationController
 
     def set_group_options
       @group_options = current_user.groups.all.map.with_index do |group, group_id|
-        [group.name.to_sym, group_id]
+        [group.name.to_sym, group_id + 1]
       end
     end
 
     def get_selected_id
-      @selected_id = @post.group_id || 0
+      @selected_id = @post.group_id || 1
     end
 
     def group_setting

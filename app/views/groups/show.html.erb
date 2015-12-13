@@ -1,4 +1,19 @@
-<h3> Show </h3>
+<h3> Group Show </h3>
 
 <p><%= @group.name %></p>
 <p><%= @group.description %></p>
+
+<% if current_user == @user %>
+  <div>
+    <%= link_to "Edit group", edit_user_group_path(@user, @group) %>
+    <%= link_to "Delete group", user_group_path(@user, @group), method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+<% end %>
+
+<% @posts.each do |post| %>
+  <%= render partial: 'shared/show_post', locals: { post: post } %>
+<% end %>
+
+<% if user_signed_in? && current_user == @user %>
+  <%= link_to "New Post", new_post_path %>
+<% end %>

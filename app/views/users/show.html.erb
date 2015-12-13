@@ -1,32 +1,19 @@
 <h3> Show </h3>
 <%= gravatar_for(@user) %>
 
+<h3>Posts:</h3>
+
 <% @posts.each do |post| %>
-  <div>
-    <span><%= post.title %></span>
-    <span><%= post.url %></span>
-    <span><%= post.description %></span>
-  </div>
-  <div>
-    <%= link_to "show", post_path(post) %>
-    <% if user_signed_in? %>
+  <%= render partial: 'shared/show_post', locals: { post: post } %>
+<% end %>
 
-      <%= link_to like_post_path(post) do %>
-        "Like"
-        <%= post.get_likes.size %>
-      <% end %>
+<h3>Groups:</h3>
 
-      <% if post.user_id == current_user.id %>
+<% @groups.each do |group| %>
+  <p><%= link_to "#{group.name}", user_group_path(@user, group) %></p>
+<% end %>
 
-        <% if post.share %>
-          <%= link_to "unshare", share_post_path(post), method: :put %>
-        <% else %>
-          <%= link_to "share", share_post_path(post), method: :put %>
-        <% end %>
-
-        <%= link_to "Edit", edit_post_path(post) %>
-        <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?!" } %>
-      <% end %>
-    <% end %>
-  </div>
+<% if user_signed_in? && current_user  == @user %>
+  <%= link_to "New Group", new_user_group_path(@user) %>
+  <%= link_to "New Post", new_post_path %>
 <% end %>

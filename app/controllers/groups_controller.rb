@@ -2,9 +2,11 @@ class GroupsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
   before_action :find_group, only: [:show, :edit, :update, :destroy]
-  before_action :judge_user, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :judge_user, only: [:new, :create, :edit, :update, :destroy]
 
   def show
+    @user = User.find(params[:user_id])
+    @posts = Post.where(group_id: @group.id)
   end
 
   def new
