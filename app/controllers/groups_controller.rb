@@ -51,7 +51,7 @@ class GroupsController < ApplicationController
     end
 
     def judge_user
-      if params[:user_id] != current_user.id || find_group.user_id != current_user.id
+      if params[:user_id].to_i != current_user.id
         redirect_to root_path
       end
     end

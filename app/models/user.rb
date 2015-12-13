@@ -30,4 +30,8 @@ class User < ActiveRecord::Base
 
   has_many :groups
   has_many :posts
+
+  after_create do |user|
+    user.groups.create(name: 'default', description: 'Default group', user_id: user.id)
+  end
 end

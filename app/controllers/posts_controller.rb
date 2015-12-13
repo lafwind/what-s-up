@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :find_post, only: [:show, :edit, :update, :destroy, :like, :share, :is_share?]
+  before_action :find_post, only: [:show, :edit, :update, :destroy, :like, :share, :is_share?, :group_setting]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :judge_user, only: [:edit, :update, :destroy, :share]
 
@@ -14,10 +14,13 @@ class PostsController < ApplicationController
 
   def new
     @post = current_user.posts.new
+    group_setting
   end
 
   def create
     @post = current_user.posts.new(post_params)
+    group_setting
+
     if @post.save
       redirect_to @post, notice: "Create successfully~~"
     else
@@ -27,6 +30,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    group_setting
   end
 
   def update
@@ -60,7 +64,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :url, :share, :description)
+      params.require(:post).permit(:title, :url, :share, :group_id, :description)
     end
 
     def judge_user
@@ -72,5 +76,20 @@ class PostsController < ApplicationController
 
     def is_share?
       @post.share
+    end
+
+    def set_group_options
+      @group_options = current_user.groups.all.map.with_index do |group, group_id|
+        [group.name.to_sym, group_id]
+      end
+    end
+
+    def get_selected_id
+      @selected_id = @post.group_id || 0
+    end
+
+    def group_setting
+      set_group_options
+      get_selected_id
     end
 end
