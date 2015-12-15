@@ -34,6 +34,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    group_setting
     if @post.update(post_params)
       redirect_to @post, notice: "Update successfully~~"
     else

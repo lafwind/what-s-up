@@ -19,7 +19,7 @@
     <% if user_signed_in? %>
 
       <%= link_to like_post_path(post) do %>
-        <span class="fa fa-heart"></span>
+        <span class="fa fa-heart-o"></span>
       <% end %>
 
       <% if post.user_id == current_user.id %>
