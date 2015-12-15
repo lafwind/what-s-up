@@ -13,14 +13,20 @@
     header {
         height: 15vh;
         line-height: 15vh;
+        border-bottom: none;
 
         a {
             color: $white;
         }
 
+        a.logo {
+            padding-left: 5rem;
+        }
+
         nav {
             height: 15vh;
             line-height: 15vh;
+            padding-right: 3rem;
         }
     }
 

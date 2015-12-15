@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
   URL_REGEX = /\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?\z/
 
   validates :title, presence: true, length: {
-              minimum: 6, maximum: 30,
+              minimum: 5, maximum: 30,
               too_long: "%{count} characters is the maximum allowed",
               too_short: "%{count} characters is the minimum allowed"
             }
@@ -28,7 +28,7 @@ class Post < ActiveRecord::Base
             }
 
   validates :description, length: {
-              maximum: 200,
+              maximum: 50,
               too_long: "%{count} characters is the maximum allowed"
             }
 

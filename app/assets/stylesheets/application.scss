@@ -24,6 +24,7 @@ $highlight: #2e9a50;
 header {
     height: 10vh;
     line-height: 10vh;
+    border-bottom: 1px darken($white, 0%) solid;
 
     a {
         color: $highlight;
@@ -31,7 +32,7 @@ header {
     }
 
     a.logo {
-        padding-left: 5rem;
+        padding-left: 20rem;
         font-size: 1.36rem;
         display: inline;
     }
@@ -41,7 +42,7 @@ header {
         height: 10vh;
         line-height: 10vh;
         float: right;
-        padding-right: 3rem;
+        padding-right: 18rem;
 
         ul {
             list-style: none;
@@ -61,6 +62,12 @@ header {
     }
 }
 
+.yield_content {
+    margin: 0 auto;
+    width: 60%;
+    margin-top: 3rem;
+}
+
 a.logo {
     display: inline-block;
     font-size: 2rem;
@@ -77,6 +84,7 @@ a.logo {
     padding: 1rem;
     border-radius: 1rem;
     border: none;
+    text-align: center;
 }
 
 .button-highlight {
@@ -85,6 +93,16 @@ a.logo {
 
     &:hover {
         background-color: darken($highlight, 5%);
+    }
+}
+
+.button-highlight-o {
+    border: 1px $highlight solid;
+    color: $highlight;
+
+    &:hover {
+        border: 1px darken($highlight, 9%) solid;
+        color: darken($highlight, 9%);
     }
 }
 

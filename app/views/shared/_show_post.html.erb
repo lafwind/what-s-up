@@ -1,25 +1,46 @@
-<%= link_to post.title, format_url(post.url) %>
-<p><%= post.description %></p>
+<div class="each_post">
 
-<div>
-  <%= link_to "show", post_path(post) %>
-  <% if user_signed_in? %>
+  <div class="like_size">
+    <%= post.get_likes.size %>
+  </div>
 
-    <%= link_to like_post_path(post) do %>
-      <span class="fa fa-heart"></span>
-      <%= post.get_likes.size %>
+  <div class="post_detail">
+    <div class="post_title">
+      <%= link_to post.title, format_url(post.url) %>
+    </div>
+    <span class="post_description"><%= post.description %></span>
+  </div>
+
+  <div class="post_action">
+    <%= link_to post_path(post) do %>
+      <span class="fa fa-eye"></span>
     <% end %>
 
-    <% if post.user_id == current_user.id %>
+    <% if user_signed_in? %>
 
-      <% if post.share %>
-        <%= link_to "unshare", share_post_path(post), method: :put %>
-      <% else %>
-        <%= link_to "share", share_post_path(post), method: :put %>
+      <%= link_to like_post_path(post) do %>
+        <span class="fa fa-heart"></span>
       <% end %>
 
-      <%= link_to "Edit", edit_post_path(post) %>
-      <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?!" } %>
+      <% if post.user_id == current_user.id %>
+
+        <% if post.share %>
+          <%= link_to share_post_path(post), method: :put do %>
+            <span class="fa fa-ban"></span>
+          <% end %>
+        <% else %>
+          <%= link_to share_post_path(post), method: :put do %>
+            <span class="fa fa-share"></span>
+          <% end %>
+        <% end %>
+
+        <%= link_to edit_post_path(post) do %>
+          <span class="fa fa-pencil-square-o"></span>
+        <% end %>
+        <%= link_to post_path(post), method: :delete, data: { confirm: "Are you sure?!" } do %>
+          <span class="fa fa-trash"></span>
+        <% end %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

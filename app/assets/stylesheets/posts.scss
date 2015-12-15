@@ -1,3 +1,80 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import './application.scss';
+
+.posts_content {
+    color: lighten($dark, 39%);
+
+    a {
+        text-decoration: none;
+        color: lighten($dark, 39%);
+    }
+
+    .each_post {
+        height: 6rem;
+
+        &:hover {
+            background-color: lighten($white, 6%);
+        }
+
+        .like_size {
+            display: inline-block;
+            vertical-align: top;
+            width: 9%;
+            text-align: center;
+            line-height: 6rem;
+        }
+
+        .post_detail {
+            display: inline-block;
+            vertical-align: top;
+            width: 66%;
+            text-align: center;
+
+            .post_title {
+                display: block;
+                box-sizing: border-box !important;
+                height: 3rem;
+                padding-top: 1rem;
+                line-height: 2rem;
+            }
+
+            .post_description {
+                display: block;
+                box-sizing: border-box !important;
+                height: 3rem;
+                padding-bottom: 1rem;
+                line-height: 2rem;
+            }
+        }
+
+        .post_action {
+            display: inline-block;
+            vertical-align: top;
+            width: 23%;
+            text-align: right;
+            line-height: 6rem;
+            box-sizing: border-box !important;
+            padding-right: 2rem;
+
+            span {
+                margin-left: .5rem;
+                color: lighten($highlight, 10%);
+            }
+        }
+    }
+}
+
+.posts_content + .new_post {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 3rem;
+    box-sizing: border-box !important;
+    padding-left: 9%;
+    padding-right: 23%;
+    .button {
+        text-align: center;
+    }
+}
