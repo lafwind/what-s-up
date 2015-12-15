@@ -1,0 +1,79 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import './application.scss';
+
+#background {
+    background-image: asset-url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+
+    header {
+        height: 15vh;
+        line-height: 15vh;
+
+        a.logo {
+            padding-left: 5rem;
+            font-size: 1.36rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $white;
+        }
+
+        nav {
+            box-sizing: border-box !important;
+            line-height: 1rem;
+            padding: 5vh;
+            float: right;
+            ul {
+                list-style: none;
+                margin: 0;
+                li {
+                    display: inline-block;
+                    padding-right: 2rem;
+
+                    a {
+                        text-decoration: none;
+                        color: $white;
+                    }
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .home_content {
+        box-sizing: border-box !important;
+        padding-top: 7rem;
+        text-align: center;
+        height: 85vh;
+        color: $white;
+        margin-bottom: -15vh;
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 200;
+        }
+
+        .action {
+            margin-top: 3rem;
+        }
+    }
+
+    footer {
+        height: 15vh;
+        text-align: center;
+        color: $white;
+        line-height: 15vh;
+
+        p {
+            box-sizing: border-box !important;
+            margin: 0;
+        }
+    }
+}

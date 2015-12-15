@@ -15,3 +15,33 @@
  *= require_tree .
  *= require_self
  */
+
+$white: #eaeaea;
+$highlight: #2e9a50;
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    width: 6rem;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.button-highlight {
+    background-color: $highlight;
+    color: $white;
+
+    &:hover {
+        background-color: darken($highlight, 3%);
+    }
+}
+
+.button-white {
+    background-color: $white;
+    color: $highlight;
+
+    &:hover {
+        background-color: darken($white, 3%);
+    }
+}

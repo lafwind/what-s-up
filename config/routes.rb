@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+
   devise_for :users
 
   resources :users, only: [:show] do
@@ -13,5 +15,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'posts#index'
+  root 'static_pages#home'
 end

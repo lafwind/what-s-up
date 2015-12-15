@@ -1,0 +1,18 @@
+<div id="background">
+  <header>
+    <%= render "shared/nav_bar" %>
+  </header>
+
+  <div class="home_content">
+    <h3>Collecting the website you like or sharing it</h3>
+    <h3>And find What's Up in the world!</h3>
+
+    <div class="action">
+      <%= link_to "Discover", posts_path, class: "button button-highlight" %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "button button-white" %>
+    </div>
+  </div>
+
+
+  <%= render "shared/footer" %>
+</div>
