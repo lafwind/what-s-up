@@ -17,7 +17,57 @@
  */
 
 $white: #eaeaea;
+$dark: #222222;
 $highlight: #2e9a50;
+
+
+header {
+    height: 10vh;
+    line-height: 10vh;
+
+    a {
+        color: $highlight;
+        text-decoration: none;
+    }
+
+    a.logo {
+        padding-left: 5rem;
+        font-size: 1.36rem;
+        display: inline;
+    }
+
+    nav {
+        box-sizing: border-box !important;
+        height: 10vh;
+        line-height: 10vh;
+        float: right;
+        padding-right: 3rem;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            li {
+                display: inline-block;
+                padding-right: 2rem;
+
+                a {
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+a.logo {
+    display: inline-block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $highlight;
+}
 
 .button {
     display: inline-block;
@@ -26,6 +76,7 @@ $highlight: #2e9a50;
     margin: 1rem;
     padding: 1rem;
     border-radius: 1rem;
+    border: none;
 }
 
 .button-highlight {
@@ -33,7 +84,7 @@ $highlight: #2e9a50;
     color: $white;
 
     &:hover {
-        background-color: darken($highlight, 3%);
+        background-color: darken($highlight, 5%);
     }
 }
 
@@ -42,6 +93,6 @@ $highlight: #2e9a50;
     color: $highlight;
 
     &:hover {
-        background-color: darken($white, 3%);
+        background-color: darken($white, 5%);
     }
 }
