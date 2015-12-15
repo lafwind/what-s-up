@@ -15,5 +15,9 @@ Rails.application.routes.draw do
     end
   end
 
+  authenticated :user do
+    root 'posts#index', as: 'authenticated_root'
+  end
+
   root 'static_pages#home'
 end
