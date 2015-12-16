@@ -28,8 +28,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  has_many :groups
-  has_many :posts
+  has_many :groups, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   after_create do |user|
     user.groups.create(name: 'default', description: 'The group created by system', user_id: user.id)

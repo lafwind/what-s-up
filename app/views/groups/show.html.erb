@@ -6,18 +6,19 @@
       <h3><%= @group.name %></h3>
       <span><%= @group.description %></span>
 
-    </div>
 
-    <% if current_user == @user %>
-      <div class="group_action">
-        <%= link_to edit_user_group_path(@user, @group) do %>
-          <span class="fa fa-edit"></span>
-        <% end %>
-        <%= link_to user_group_path(@user, @group), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <span class="fa fa-trash-o"></span>
-        <% end %>
-      </div>
-    <% end %>
+      <% if current_user == @user %>
+        <div class="group_action">
+          <%= link_to edit_user_group_path(@user, @group) do %>
+            <span class="fa fa-edit"></span>
+          <% end %>
+          <%= link_to user_group_path(@user, @group), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <span class="fa fa-trash-o"></span>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
 
     <% @posts.each do |post| %>
       <%= render partial: 'shared/show_post', locals: { post: post } %>

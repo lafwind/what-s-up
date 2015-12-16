@@ -8,7 +8,7 @@
     padding-top: 3rem;
     margin: 0 auto;
     width: 50%;
-    form {
+    .form {
         .form_row {
             padding-bottom: 1rem;
 
@@ -28,21 +28,6 @@
                     border: 1px lighten($highlight, 36%) solid;
                     // box-shadow: 0 0 1rem lighten($highlight, 40%);
                 }
-            }
-            ::-webkit-input-placeholder {
-                font-size: .8rem;
-            }
-
-            :-moz-placeholder { /* Firefox 18- */
-                font-size: .8rem;
-            }
-
-            ::-moz-placeholder {  /* Firefox 19+ */
-                font-size: .8rem;
-            }
-
-            :-ms-input-placeholder {
-                font-size: .8rem;
             }
 
             .action {
@@ -74,9 +59,16 @@
     }
 
     .group_detail {
-        display: inline-block;
         margin-bottom: .3rem;
         height: 3rem;
+
+        &:hover {
+            .group_action {
+                a, span {
+                    color: lighten($highlight, 15%);
+                }
+            }
+        }
 
         h3 {
             display: inline-block;
@@ -93,17 +85,17 @@
             color: lighten($dark, 50%);
             padding-left: 1rem;
         }
-    }
 
-    .group_action {
-        height: 3rem;
-        line-height: 3rem;
-        display: inline-block;
-        width: 10%;
-        text-align: center;
+        .group_action {
+            display: inline-block;
+            height: 3rem;
+            line-height: 3rem;
+            width: 10%;
+            text-align: center;
 
-        a {
-            color: $highlight;
+            a, span {
+                color: $highlight;
+            }
         }
     }
 }

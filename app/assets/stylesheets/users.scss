@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 @import './application.scss';
 
 .form_page {
@@ -59,21 +58,6 @@
         input[type="checkbox"] {
         }
 
-        ::-webkit-input-placeholder {
-            font-size: .8rem;
-        }
-
-        :-moz-placeholder { /* Firefox 18- */
-            font-size: .8rem;
-        }
-
-        ::-moz-placeholder {  /* Firefox 19+ */
-            font-size: .8rem;
-        }
-
-        :-ms-input-placeholder {
-            font-size: .8rem;
-        }
 
         .button {
             width: 60%;
@@ -117,8 +101,6 @@
         text-align: center;
         .gravatar {
             img {
-                display: inline-block;
-                border-radius: 100%;
             }
         }
 
@@ -150,5 +132,15 @@
             }
         }
 
+    }
+}
+
+
+.gravatar {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    img {
+        display: inline-block;
+        border-radius: 100%;
     }
 }

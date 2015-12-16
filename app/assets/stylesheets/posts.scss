@@ -51,21 +51,6 @@
                     // box-shadow: 0 0 1rem lighten($highlight, 40%);
                 }
             }
-            ::-webkit-input-placeholder {
-                font-size: .8rem;
-            }
-
-            :-moz-placeholder { /* Firefox 18- */
-                font-size: .8rem;
-            }
-
-            ::-moz-placeholder {  /* Firefox 19+ */
-                font-size: .8rem;
-            }
-
-            :-ms-input-placeholder {
-                font-size: .8rem;
-            }
 
             .action {
                 margin: 0 auto;
