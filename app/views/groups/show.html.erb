@@ -1,19 +1,33 @@
-<h3> Group Show </h3>
+<div class="yield_content">
+  <div class="group_show">
 
-<p><%= @group.name %></p>
-<p><%= @group.description %></p>
+    <div class="group_detail">
 
-<% if current_user == @user %>
-  <div>
-    <%= link_to "Edit group", edit_user_group_path(@user, @group) %>
-    <%= link_to "Delete group", user_group_path(@user, @group), method: :delete, data: { confirm: "Are you sure?" } %>
+      <h3><%= @group.name %></h3>
+      <span><%= @group.description %></span>
+
+    </div>
+
+    <% if current_user == @user %>
+      <div class="group_action">
+        <%= link_to edit_user_group_path(@user, @group) do %>
+          <span class="fa fa-edit"></span>
+        <% end %>
+        <%= link_to user_group_path(@user, @group), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <span class="fa fa-trash-o"></span>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% @posts.each do |post| %>
+      <%= render partial: 'shared/show_post', locals: { post: post } %>
+    <% end %>
+
+    <% if user_signed_in? && current_user == @user %>
+      <div class="some_buttons">
+        <%= link_to "New Post", new_post_path, class: "button button-highlight-o" %>
+      </div>
+    <% end %>
+
   </div>
-<% end %>
-
-<% @posts.each do |post| %>
-  <%= render partial: 'shared/show_post', locals: { post: post } %>
-<% end %>
-
-<% if user_signed_in? && current_user == @user %>
-  <%= link_to "New Post", new_post_path %>
-<% end %>
+</div>

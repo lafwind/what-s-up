@@ -5,8 +5,7 @@ class GroupsController < ApplicationController
   before_action :judge_user, only: [:new, :create, :edit, :update, :destroy]
 
   def show
-    @user = User.find(params[:user_id])
-    @posts = Post.where(group_id: @group.id)
+    @posts = @group.posts
   end
 
   def new
@@ -49,7 +48,9 @@ class GroupsController < ApplicationController
 
     def find_group
       # @group = Group.where(id: params[:id], user_id: params[:user_id]).first
-      @group = Group.find(params[:id])
+      # @group = Group.find(params[:id])
+      @user = User.find(params[:user_id])
+      @group = @user.groups.find(params[:id])
     end
 
     def judge_user

@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   has_many :posts
 
   after_create do |user|
-    user.groups.create(name: 'default', description: 'Default group', user_id: user.id)
+    user.groups.create(name: 'default', description: 'The group created by system', user_id: user.id)
   end
 
   acts_as_voter

@@ -26,7 +26,7 @@
     </div>
 
     <% if user_signed_in? && current_user  == @user %>
-      <div class="some_links">
+      <div class="some_buttons">
         <%= link_to "New Group", new_user_group_path(@user), class: "button button-highlight-o" %>
         <%= link_to "New Post", new_post_path, class: "button button-highlight-o" %>
       </div>
