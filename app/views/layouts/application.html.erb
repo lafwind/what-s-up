@@ -15,13 +15,15 @@
     <%= alert %>
   <% end %>
 
-  <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) || current_page?(new_user_password_path) ||
-    current_page?(new_user_confirmation_path) || (params[:controller] == 'static_pages' && params[:action] == 'home') %>
-
+  <% if need_header_or_footer? %>
     <%= render "shared/header" %>
   <% end %>
 
   <%= yield %>
+
+  <% if need_header_or_footer? %>
+    <%= render "shared/footer" %>
+  <% end %>
 
 </body>
 </html>

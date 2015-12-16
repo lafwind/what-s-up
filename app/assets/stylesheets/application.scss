@@ -67,11 +67,23 @@ header {
     margin: 0 auto;
     width: 60%;
     margin-top: 3rem;
+
+    min-height: 75vh;
+}
+
+footer {
+    text-align: center;
+    color: lighten($dark, 50%);
 }
 
 
 .each_post {
     height: 6rem;
+
+    a {
+        text-decoration: none;
+        color: lighten($dark, 39%);
+    }
 
     &:hover {
         background-color: lighten($white, 6%);
@@ -85,7 +97,7 @@ header {
         display: inline-block;
         box-sizing: border-box !important;
         vertical-align: top;
-        width: 23%;
+        width: 15%;
         // text-align: center;
         padding-left: 3%;
         line-height: 6rem;
@@ -94,7 +106,7 @@ header {
     .post_detail {
         display: inline-block;
         vertical-align: top;
-        width: 52%;
+        width: 50%;
         // text-align: center;
 
         .post_title {
@@ -111,6 +123,19 @@ header {
             height: 3rem;
             padding-bottom: 1rem;
             line-height: 2rem;
+        }
+    }
+
+    .post_author {
+        display: inline-block;
+        vertical-align: top;
+        width: 10%;
+        text-align: center;
+        line-height: 6rem;
+
+        a {
+            color: $highlight;
+            text-decoration: none;
         }
     }
 
