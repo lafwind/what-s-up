@@ -99,6 +99,7 @@ a.logo {
 .button-highlight-o {
     border: 1px $highlight solid;
     color: $highlight;
+    background-color: lighten($white, 100%);
 
     &:hover {
         border: 1px darken($highlight, 9%) solid;
@@ -112,5 +113,18 @@ a.logo {
 
     &:hover {
         background-color: darken($white, 5%);
+    }
+}
+
+.form_link {
+    text-align: center;
+    a {
+        text-decoration: none;
+        color: $highlight;
+        text-align: center;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }

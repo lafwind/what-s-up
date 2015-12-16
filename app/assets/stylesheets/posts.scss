@@ -12,6 +12,7 @@
         color: lighten($dark, 39%);
     }
 
+
     .each_post {
         height: 6rem;
 
@@ -82,5 +83,63 @@
     // padding-right: 23%;
     .button {
         text-align: center;
+    }
+}
+
+.post_form_page {
+    padding-top: 6rem;
+    margin: 0 auto;
+    width: 30%;
+    form {
+        .form_row {
+            padding-bottom: 1rem;
+
+            label {
+                color: lighten($dark, 50%);
+            }
+
+            input[type="text"], input[type="password"], textarea {
+                box-sizing: border-box !important;
+                display: inline-block;
+                width: 100%;
+                padding: .5rem;
+                outline: none;
+                border: 1px darken($white, 10%) solid;
+
+                &:focus {
+                    border: 1px lighten($highlight, 36%) solid;
+                    // box-shadow: 0 0 1rem lighten($highlight, 40%);
+                }
+            }
+            ::-webkit-input-placeholder {
+                font-size: .8rem;
+            }
+
+            :-moz-placeholder { /* Firefox 18- */
+                font-size: .8rem;
+            }
+
+            ::-moz-placeholder {  /* Firefox 19+ */
+                font-size: .8rem;
+            }
+
+            :-ms-input-placeholder {
+                font-size: .8rem;
+            }
+
+            .action {
+                margin: 0 auto;
+                width: 30%;
+                .button {
+                    width: 100%;
+                    margin: 0;
+                    margin-top: 2rem;
+                    padding-top: .9rem;
+                    padding-bottom: .9rem;
+                    border-radius: .5rem;
+                }
+            }
+        }
+
     }
 }

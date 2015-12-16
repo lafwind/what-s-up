@@ -1,7 +1,8 @@
-<h3>Edit Post</h3>
 
 <%= render 'shared/errors' %>
 
-<%= render "shared/post_form" %>
-<%= link_to "show", post_path %>
-<%= link_to "home", posts_path %>
+<%= render partial: 'shared/post_form', locals: { button_name: "Update Post" } %>
+
+<div class="form_link">
+  <%= link_to "back", post_path%>
+</div>
