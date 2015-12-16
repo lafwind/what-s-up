@@ -17,21 +17,27 @@
 
         &:hover {
             background-color: lighten($white, 6%);
+            color: lighten($dark, 23%);
+            a {
+                color: lighten($dark, 23%);
+            }
         }
 
         .like_size {
             display: inline-block;
+            box-sizing: border-box !important;
             vertical-align: top;
-            width: 9%;
-            text-align: center;
+            width: 23%;
+            // text-align: center;
+            padding-left: 3%;
             line-height: 6rem;
         }
 
         .post_detail {
             display: inline-block;
             vertical-align: top;
-            width: 66%;
-            text-align: center;
+            width: 52%;
+            // text-align: center;
 
             .post_title {
                 display: block;
@@ -72,8 +78,8 @@
     text-align: center;
     margin-top: 3rem;
     box-sizing: border-box !important;
-    padding-left: 9%;
-    padding-right: 23%;
+    // padding-left: 9%;
+    // padding-right: 23%;
     .button {
         text-align: center;
     }
