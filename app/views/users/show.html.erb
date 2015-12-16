@@ -1,19 +1,35 @@
-<h3> Show </h3>
-<%= gravatar_for(@user) %>
+<div class="yield_content">
+  <div class="user_show">
 
-<h3>Posts:</h3>
+    <div class="user_detail">
 
-<% @posts.each do |post| %>
-  <%= render partial: 'shared/show_post', locals: { post: post } %>
-<% end %>
+      <div class="gravatar">
+        <%= gravatar_for(@user) %>
+      </div>
 
-<h3>Groups:</h3>
+      <p class="user_name"><%= @user.name %></p>
+      <p class="user_mail"><%= @user.email %></p>
+    </div>
 
-<% @groups.each do |group| %>
-  <p><%= link_to "#{group.name}", user_group_path(@user, group) %></p>
-<% end %>
+    <!-- <h3>Posts:</h3> -->
 
-<% if user_signed_in? && current_user  == @user %>
-  <%= link_to "New Group", new_user_group_path(@user) %>
-  <%= link_to "New Post", new_post_path %>
-<% end %>
+    <!-- <% @posts.each do |post| %> -->
+    <!--   <%= render partial: 'shared/show_post', locals: { post: post } %> -->
+    <!-- <% end %> -->
+
+    <div class="groups">
+      <h3>Groups:</h3>
+
+      <% @groups.each do |group| %>
+        <span><%= link_to "#{group.name}(#{group.posts.size})", user_group_path(@user, group) %></span>
+      <% end %>
+    </div>
+
+    <% if user_signed_in? && current_user  == @user %>
+      <div class="some_links">
+        <%= link_to "New Group", new_user_group_path(@user), class: "button button-highlight-o" %>
+        <%= link_to "New Post", new_post_path, class: "button button-highlight-o" %>
+      </div>
+    <% end %>
+  </div>
+</div>
