@@ -18,6 +18,7 @@
       <div class="form_row">
         <%= f.label :select_group %>
         <%= f.select(:group_id, options_for_select(@group_options, @selected_id)) %>
+        <%= link_to "New Group", new_user_group_path(current_user) %>
       </div>
 
 

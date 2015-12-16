@@ -11,6 +11,9 @@
 #
 
 class Group < ActiveRecord::Base
+  validates :name, presence: true, length: { minimum: 2, maximum: 20 }
+  validates :description, presence: true, length: { minimum: 6, maximum: 50 }
+
   belongs_to :user
   has_many :posts
 end

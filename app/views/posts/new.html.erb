@@ -1,2 +1,4 @@
-<%= render 'shared/errors' %>
-<%= render partial: 'shared/post_form', locals: { button_name: "New Post" } %>
+<div class="yield_content">
+  <%= render partial: 'shared/errors', locals: { item: @post } %>
+  <%= render partial: 'shared/post_form', locals: { button_name: "New Post" } %>
+</div>

@@ -1,8 +1,11 @@
+<div class="yield_content">
 
-<%= render 'shared/errors' %>
+  <%= render partial: 'shared/errors', locals: { item: @post } %>
 
-<%= render partial: 'shared/post_form', locals: { button_name: "Update Post" } %>
+  <%= render partial: 'shared/post_form', locals: { button_name: "Update Post" } %>
 
-<div class="form_link">
-  <%= link_to "back", post_path%>
+  <div class="form_link">
+    <%= link_to "back", post_path%>
+  </div>
+
 </div>

@@ -1,2 +1,4 @@
-<h3> Group Edit </h3>
-<%= render 'shared/group_form' %>
+<div class="yield_content">
+  <%= render partial: 'shared/errors', locals: { item: @group } %>
+  <%= render partial: 'shared/group_form', locals: { button_name: "Update Group"} %>
+</div>

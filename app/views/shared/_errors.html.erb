@@ -1,10 +1,13 @@
-<% if @post.errors.any? %>
-  <p><%= pluralize(@post.errors.count, "error") %></p>
-  <ul>
-    <% @post.errors.messages.each do |msg| %>
-      <% msg.last.each do |detail| %>
-        <li><%= msg.first.capitalize %>: <%= detail.capitalize %></li>
+<% if item.errors.any? %>
+
+  <div class="error_msg">
+    <p><%= pluralize(item.errors.count, "error") %></p>
+    <ul>
+      <% item.errors.messages.each do |msg| %>
+        <% msg.last.each do |detail| %>
+          <li><%= msg.first.capitalize %>: <%= detail.capitalize %></li>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+  </div>
 <% end %>
