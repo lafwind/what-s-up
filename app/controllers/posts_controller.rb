@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :find_post, only: [:show, :edit, :update, :destroy, :like, :share, :is_share?, :group_setting]
+  before_action :find_post, only: [:show, :edit, :update, :destroy, :like, :unlike, :share, :is_share?, :group_setting]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :judge_user, only: [:edit, :update, :destroy, :share]
 
@@ -50,6 +50,11 @@ class PostsController < ApplicationController
 
   def like
     @post.liked_by current_user
+    redirect_to :back
+  end
+
+  def unlike
+    @post.unliked_by current_user
     redirect_to :back
   end
 
