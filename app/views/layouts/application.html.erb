@@ -15,13 +15,13 @@
     <%= alert %>
   <% end %>
 
-  <% if need_header_or_footer? %>
+  <% if is_need_header_or_footer? %>
     <%= render "shared/header" %>
   <% end %>
 
   <%= yield %>
 
-  <% if need_header_or_footer? %>
+  <% if is_need_header_or_footer? %>
     <%= render "shared/footer" %>
   <% end %>
 
