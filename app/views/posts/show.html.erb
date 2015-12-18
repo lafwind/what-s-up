@@ -12,15 +12,22 @@
 
 
     <div class="post_author">
-      <span>by</span>
-      <%= link_to "#{ @post.user.name }", user_path(@post.user) %>
+      <% if @post.created_at == @post.updated_at %>
+        <span>Created by</span>
+        <%= link_to "#{ @post.user.name }", user_path(@post.user) %>
+        <span>on <%= @post.created_at.strftime("%B %d, %Y") %></span>
+      <% else %>
+        <span>Updated by</span>
+        <%= link_to "#{ @post.user.name }", user_path(@post.user) %>
+        <span>on <%= @post.updated_at.strftime("%B %d, %Y") %></span>
+      <% end %>
     </div>
 
     <div class="post_action">
       <%= render partial: "shared/post_action", locals: { post: @post } %>
     </div>
 
-    <span class="post_description"><%= @post.description%></span>
+    <span class="post_description"><%= @post.description %></span>
 
   </div>
 </div>

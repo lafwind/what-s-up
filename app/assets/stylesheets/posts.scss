@@ -106,11 +106,17 @@
         .post_author {
             margin-top: .8rem;
             margin-bottom: .5rem;
+            font-size: .8rem;
             text-align: left;
             vertical-align: top;
             display: inline-block;
-            width: 50%;
-            a:hover {
+            width: 78%;
+
+            a {
+                font-weight: 600;
+            }
+
+            &hover {
                 text-decoration: underline;
             }
         }
@@ -120,7 +126,7 @@
             margin-bottom: .5rem;
             display: inline-block;
             vertical-align: top;
-            width: 40%;
+            width: 20%;
             text-align: right;
             a {
                 color: $highlight;

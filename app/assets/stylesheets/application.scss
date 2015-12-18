@@ -72,6 +72,7 @@ header {
 }
 
 footer {
+    margin-top: 1rem;
     text-align: center;
     color: lighten($dark, 50%);
 }
@@ -151,6 +152,11 @@ footer {
         span {
             margin-left: .5rem;
             color: $highlight;
+        }
+
+        .comment_size {
+            margin: 0;
+            font-size: .8rem;
         }
     }
 }

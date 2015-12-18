@@ -1,15 +1,5 @@
 <% if user_signed_in? %>
 
-  <% if current_user.voted_up_on? post %>
-    <%= link_to unlike_post_path(post) do %>
-      <span class="fa fa-heart"></span>
-    <% end %>
-  <% else %>
-    <%= link_to like_post_path(post) do %>
-      <span class="fa fa-heart-o"></span>
-    <% end %>
-  <% end %>
-
   <% if post.user_id == current_user.id %>
 
     <% if post.share %>
@@ -27,6 +17,16 @@
     <% end %>
     <%= link_to post_path(post), method: :delete, data: { confirm: "Are you sure?!" } do %>
       <span class="fa fa-trash-o"></span>
+    <% end %>
+  <% end %>
+
+  <% if current_user.voted_up_on? post %>
+    <%= link_to unlike_post_path(post) do %>
+      <span class="fa fa-heart"></span>
+    <% end %>
+  <% else %>
+    <%= link_to like_post_path(post) do %>
+      <span class="fa fa-heart-o"></span>
     <% end %>
   <% end %>
 <% end %>
