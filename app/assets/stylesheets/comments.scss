@@ -1,0 +1,72 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import './application.scss';
+
+.comment_area {
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+
+    button {
+        width: 23%;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        border-radius: .5rem;
+        margin-top: 2rem;
+    }
+
+    .post_comments {
+        margin-top: 2rem;
+        color: lighten($dark, 20%);
+        text-align: left;
+
+        .comment {
+            margin-bottom: 2.5rem;
+            .comment_user {
+                display: inline-block;
+                vertical-align: top;
+                width: 15%;
+                height: 3rem;
+                text-align: center;
+                .gravatar {
+                    margin-bottom: .2rem;
+                    img {
+                        height: 2.5rem;
+                        width: 2.5rem;
+                    }
+                }
+
+
+            }
+
+            .comment_content {
+                display: inline-block;
+                vertical-align: top;
+                max-width: 80%;
+
+                .status {
+                    margin-bottom: .5rem;
+
+                    a {
+                        color: lighten($dark, 20%);
+                        text-decoration: none;
+                        font-weight: 600;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                }
+
+                .content {
+                    max-width: 80%;
+                    line-height: 1.5rem;
+                }
+            }
+        }
+
+    }
+}

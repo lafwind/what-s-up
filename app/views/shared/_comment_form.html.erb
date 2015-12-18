@@ -1,0 +1,6 @@
+<div class="form">
+  <%= form_for([@post, @post.comments.new]) do |f| %>
+    <%= f.text_area :content, placeholder: placeholder %>
+    <%= f.button "comment", class: btn_class, disabled: disabled_ans %>
+  <% end %>
+</div>

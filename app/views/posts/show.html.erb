@@ -1,5 +1,5 @@
 <div class="yield_content">
-<div class="each_post">
+<div class="post_show">
   <div class="like_size">
     <span class="fa fa-sort"></span>
     <%= @post.get_likes.size %>
@@ -9,15 +9,52 @@
     <div class="post_title">
       <%= link_to @post.title, format_url(@post.url) %>
     </div>
+
+
+    <div class="post_author">
+      <span>by</span>
+      <%= link_to "#{ @post.user.name }", user_path(@post.user) %>
+    </div>
+
+    <div class="post_action">
+      <%= render partial: "shared/post_action", locals: { post: @post } %>
+    </div>
+
     <span class="post_description"><%= @post.description%></span>
-  </div>
 
-  <div class="post_author">
-    <%= link_to "#{ @post.user.name }", user_path(@post.user) %>
   </div>
+</div>
 
-  <div class="post_action">
-    <%= render partial: "shared/post_action", locals: { post: @post } %>
+<div class="comment_area">
+  <% if user_signed_in? %>
+    <%= render partial: "shared/comment_form", locals: { placeholder: "Any comments?", disabled_ans: false, btn_class: "button button-highlight-o" } %>
+  <% else %>
+    <%= render partial: "shared/comment_form", locals: { placeholder: "Please login or sign up for leaving comment(s)", disabled_ans: true, btn_class: "button button-disable" } %>
+  <% end %>
+
+  <div class="post_comments">
+    <% comments_group = find_comments_group(@post) %>
+
+    <% comments_group.each do |user, comment| %>
+      <div class="comment">
+
+        <div class="comment_user">
+          <div class="gravatar">
+            <%= gravatar_for(user) %>
+          </div>
+        </div>
+
+        <div class="comment_content">
+          <div class="status">
+            <%= link_to user.name, user_path(user) %>
+            commented on
+            <%= comment.created_at.strftime("%B %d, %Y") %>
+          </div>
+          <div class="content"><%= comment.content %></div>
+        </div>
+
+      </div>
+    <% end %>
   </div>
 </div>
 </div>

@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
 
   has_many :groups, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   after_create do |user|
     user.groups.create(name: 'default', description: 'The group created by system', user_id: user.id)

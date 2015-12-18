@@ -68,3 +68,72 @@
 
     }
 }
+
+.post_show {
+    margin: 0 auto;
+    width: 60%;
+    color: darken($white, 50%);
+    height: 6rem;
+    margin-bottom: .6rem;
+    a {
+        color: darken($white, 55%);
+        text-decoration: none;
+        vertical-align: top;
+    }
+
+    .like_size {
+        display: inline-block;
+        width: 9%;
+        height: 2rem;
+        line-height: 2rem;
+    }
+
+    .post_detail {
+        display: inline-block;
+        vertical-align: top;
+        width: 90%;
+
+        .post_title {
+            display: block;
+            vertical-align: top;
+            font-size: 1.5rem;
+            height: 1.5rem;
+            a:hover {
+                color: $highlight;
+            }
+        }
+
+        .post_author {
+            margin-top: .8rem;
+            margin-bottom: .5rem;
+            text-align: left;
+            vertical-align: top;
+            display: inline-block;
+            width: 50%;
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .post_action {
+            margin-top: .8rem;
+            margin-bottom: .5rem;
+            display: inline-block;
+            vertical-align: top;
+            width: 40%;
+            text-align: right;
+            a {
+                color: $highlight;
+            }
+        }
+
+
+        .post_description {
+            display: inline-block;
+            width: 90%;
+            color: darken($white, 50%);
+        }
+
+
+    }
+}

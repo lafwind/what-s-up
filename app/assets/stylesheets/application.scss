@@ -262,6 +262,12 @@ a.logo {
     }
 }
 
+.button-disable {
+    border: 1px darken($white, 20%) solid;
+    background-color: lighten($white, 60%);
+    color: darken($white, 20%);
+}
+
 .some_links {
     text-align: center;
     a {

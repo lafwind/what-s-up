@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts do
+    resources :comments
     member do
       get "like", to: "posts#like"
       get "unlike", to: "posts#unlike"
