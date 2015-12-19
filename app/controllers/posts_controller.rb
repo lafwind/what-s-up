@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.where(share: true)
+    @posts = Post.recent
   end
 
   def show
@@ -61,6 +61,16 @@ class PostsController < ApplicationController
   def share
     is_share? ? @post.update(share: false) : @post.update(share: true)
     redirect_to :back
+  end
+
+  def recent
+    @posts = Post.recent
+    render action: :index
+  end
+
+  def active
+    @posts = Post.active
+    render action: :index
   end
 
   private

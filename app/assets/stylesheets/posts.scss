@@ -4,6 +4,25 @@
 
 @import './application.scss';
 
+.bar {
+    height: 3rem;
+    line-height: 3rem;
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: lighten($dark, 39%);
+        padding-left: 1rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .selected {
+        color: $highlight;
+    }
+}
+
 .posts_content {
     color: lighten($dark, 39%);
 

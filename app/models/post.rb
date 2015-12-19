@@ -36,5 +36,8 @@ class Post < ActiveRecord::Base
   belongs_to :group
   has_many :comments, dependent: :destroy
 
+  scope :recent, ->{ where(share: true).order("created_at DESC") }
+  scope :active, ->{ where("share = ? and comments_count >= ?", true, 3) }
+
   acts_as_votable
 end

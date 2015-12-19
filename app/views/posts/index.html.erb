@@ -1,5 +1,18 @@
 <div class="yield_content">
 
+  <div class="bar">
+    <% if params[:action] == 'recent' %>
+      <%= link_to "Recent", recent_posts_path, class: "selected" %>
+      <%= link_to "Active", active_posts_path %>
+    <% elsif params[:action] == 'active'  %>
+      <%= link_to "Recent", recent_posts_path %>
+      <%= link_to "Active", active_posts_path, class: "selected" %>
+    <% else %>
+      <%= link_to "Recent", recent_posts_path %>
+      <%= link_to "Active", active_posts_path %>
+    <% end %>
+  </div>
+
   <div class="posts_content">
     <% @posts.each do |post|%>
       <%= render partial: 'shared/show_post', locals: { post: post } %>
@@ -11,5 +24,6 @@
       <%= link_to "New Post", new_post_path, class: "button button-highlight-o" %>
     </div>
   <% end %>
+
 
 </div>

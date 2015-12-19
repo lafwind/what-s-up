@@ -10,6 +10,11 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments
+
+    collection do
+      get :recent
+      get "active", to: "posts#active"
+    end
     member do
       get "like", to: "posts#like"
       get "unlike", to: "posts#unlike"
