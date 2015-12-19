@@ -14,3 +14,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function wrapperAnimation(selector) {
+    setTimeout(function(){
+        $(selector).fadeOut("slow", function() {
+            $(this).remove();
+        });
+    }, 1900);
+}
+
+$(document).ready(function(){
+    wrapperAnimation('.notice_wrapper');
+});
+
+
+$(document).ready(function(){
+    wrapperAnimation('.alert_wrapper');
+});

@@ -7,13 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if notice %>
-    <%= notice %>
-  <% end %>
+    <% if notice %>
+      <div class="notice_wrapper">
+        <%= notice %>
+      </div>
+    <% end %>
 
-  <% if alert %>
-    <%= alert %>
-  <% end %>
+    <% if alert %>
+      <div class="alert_wrapper">
+        <%= alert %>
+      </div>
+    <% end %>
 
   <% if is_need_header_or_footer? %>
     <%= render "shared/header" %>
@@ -24,6 +28,5 @@
   <% if is_need_header_or_footer? %>
     <%= render "shared/footer" %>
   <% end %>
-
 </body>
 </html>

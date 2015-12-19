@@ -21,6 +21,28 @@ $dark: #222222;
 $highlight: #2e9a50;
 $error: #dda5a5;
 
+.notice_wrapper, .alert_wrapper {
+    position: absolute;
+    display: block;
+    text-align: center;
+    z-index: 999;
+    width: 100%;
+    height: 10vh;
+    line-height: 10vh;
+    color: white;
+}
+
+.notice_wrapper {
+    // background-color: rgba(100, 200, 100, 0.8);
+    background-color: lighten($highlight, 20%);
+}
+
+.alert_wrapper {
+    // background-color: rgba(200, 100, 100, 0.8);
+    background-color: lighten($error, 10%);
+}
+
+
 
 header {
     height: 10vh;
@@ -72,9 +94,13 @@ header {
 }
 
 footer {
-    margin-top: 1rem;
+    height: 10vh;
+    line-height: 10vh;
     text-align: center;
     color: lighten($dark, 50%);
+    p {
+        margin: 0;
+    }
 }
 
 
@@ -316,5 +342,24 @@ a.logo {
 
     li {
         padding-bottom: .5rem;
+    }
+
+    // for devise error messages
+}
+
+.devise_error_msg {
+    margin: 0 auto;
+    width: 60%;
+    color: $error;
+    #error_explanation {
+        text-align: left;
+        h2 {
+            font-size: .8rem;
+        }
+        ul {
+            li {
+                font-size: .8rem;
+            }
+        }
     }
 }

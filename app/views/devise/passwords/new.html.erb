@@ -2,9 +2,11 @@
 
   <div class="form">
 
-    <%= link_to "Whatsup", root_path, class: "logo" %>
+    <%#= link_to "Whatsup", root_path, class: "logo" %>
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= devise_error_messages! %>
+      <div class="devise_error_msg">
+        <%= devise_error_messages! %>
+      </div>
 
       <div class="field">
         <%= f.email_field :email, autofocus: true, placeholder: "Email" %>

@@ -6,20 +6,23 @@
 
 .form_page {
 
-    height: 100vh;
+    min-height: 90vh;
     background-color: lighten($white, 5%);
     box-sizing: border-box !important;
-    padding-top: 18vh;
+    padding-top: 19vh;
+    padding-bottom: 6vh;
+    border-bottom: 1px $white solid;
 
     .form {
         background-color: lighten($white, 10%);
         margin: 0 auto;
         width: 36%;
         border: 1px $white solid;
-        min-height: 36vh;
+        min-height: 19vh;
         text-align: center;
-        padding-top: 2.3rem;
-        padding-bottom: 3.6rem;
+        padding-top: 3rem;
+        padding-bottom: 1.6rem;
+        margin-bottom: 2rem;
 
         .logo {
             margin-bottom: 3rem;
