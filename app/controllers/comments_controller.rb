@@ -10,8 +10,8 @@ class CommentsController < ApplicationController
       flash[:success] = "Comment successfully!"
       redirect_to :back
     else
-      flash.now[:error] = "Some error!"
-      render :back
+      flash.now[:alert] = "Some error!"
+      render "posts/show"
     end
   end
 end

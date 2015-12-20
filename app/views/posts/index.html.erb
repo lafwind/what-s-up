@@ -19,6 +19,10 @@
     <% end %>
   </div>
 
+  <div class="paginate">
+    <%= will_paginate @posts %>
+  </div>
+
   <% if user_signed_in? %>
     <div class="some_buttons">
       <%= link_to "New Post", new_post_path, class: "button button-highlight-o" %>

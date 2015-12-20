@@ -32,6 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'will_paginate', '~> 3.0.6'
 
 # UI
 gem 'normalize-rails'

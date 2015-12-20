@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.recent
+    @posts = Post.recent.paginate(page: params[:page])
   end
 
   def show
@@ -64,12 +64,12 @@ class PostsController < ApplicationController
   end
 
   def recent
-    @posts = Post.recent
+    @posts = Post.recent.paginate(page: params[:page])
     render action: :index
   end
 
   def active
-    @posts = Post.active
+    @posts = Post.active.paginate(page: params[:page])
     render action: :index
   end
 

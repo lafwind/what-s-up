@@ -173,7 +173,7 @@ footer {
         text-align: right;
         line-height: 6rem;
         box-sizing: border-box !important;
-        padding-right: 2rem;
+        padding-right: 1.5rem;
 
         span {
             margin-left: .5rem;
@@ -360,6 +360,25 @@ a.logo {
             li {
                 font-size: .8rem;
             }
+        }
+    }
+}
+
+.paginate {
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: right;
+    color: lighten($dark, 39%);
+    box-sizing: border-box !important;
+    padding-right: 1.5rem;
+
+    a {
+        color: $highlight;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
         }
     }
 }

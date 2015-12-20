@@ -39,5 +39,7 @@ class Post < ActiveRecord::Base
   scope :recent, ->{ where(share: true).order("created_at DESC") }
   scope :active, ->{ where("share = ? and comments_count >= ?", true, 3) }
 
+  self.per_page = 10
+
   acts_as_votable
 end
