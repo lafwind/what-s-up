@@ -53,3 +53,9 @@ group :development, :test do
   gem "binding_of_caller"
   gem 'annotate'
 end
+
+group :production do
+  gem 'pg', '~> 0.18.4'
+  gem 'rails_12factor', '~> 0.0.3'
+  gem 'puma', '~> 2.15', '>= 2.15.3'
+end
