@@ -36,5 +36,7 @@ class User < ActiveRecord::Base
     user.groups.create(name: 'default', description: 'The group created by system', user_id: user.id)
   end
 
+  validates :name, presence: true, length: { minimum: 6, maximum: 20 }
+
   acts_as_voter
 end

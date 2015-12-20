@@ -105,7 +105,7 @@ footer {
 
 
 .each_post {
-    height: 6rem;
+    height: 100%;
 
     a {
         text-decoration: none;
@@ -124,7 +124,7 @@ footer {
         display: inline-block;
         box-sizing: border-box !important;
         vertical-align: top;
-        width: 15%;
+        width: 12%;
         // text-align: center;
         padding-left: 3%;
         line-height: 6rem;
@@ -133,12 +133,14 @@ footer {
     .post_detail {
         display: inline-block;
         vertical-align: top;
-        width: 50%;
+        width: 48%;
+        height: 100%;
         // text-align: center;
 
         .post_title {
             display: block;
             box-sizing: border-box !important;
+            font-size: 1.2rem;
             height: 3rem;
             padding-top: 1rem;
             line-height: 2rem;
@@ -147,16 +149,17 @@ footer {
         .post_description {
             display: block;
             box-sizing: border-box !important;
-            height: 3rem;
+            font-size: .9rem;
+            height: 4rem;
             padding-bottom: 1rem;
-            line-height: 2rem;
+            line-height: 1.5rem;
         }
     }
 
     .post_author {
         display: inline-block;
         vertical-align: top;
-        width: 10%;
+        width: 15%;
         text-align: center;
         line-height: 6rem;
 
@@ -353,8 +356,10 @@ a.logo {
 // for devise error messages
 .devise_error_msg {
     margin: 0 auto;
+    margin-bottom: 2rem;
     width: 60%;
     color: $error;
+    border: none;
     #error_explanation {
         text-align: left;
         h2 {
