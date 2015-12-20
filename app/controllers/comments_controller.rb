@@ -8,9 +8,10 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:success] = "Comment successfully!"
-      redirect_to :back
+      redirect_to @post
     else
       flash.now[:alert] = "Some error!"
+      # redirect_to @post
       render "posts/show"
     end
   end

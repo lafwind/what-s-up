@@ -20,14 +20,10 @@ function wrapperAnimation(selector) {
         $(selector).fadeOut("slow", function() {
             $(this).remove();
         });
-    }, 1900);
+    }, 1600);
 }
 
 $(document).ready(function(){
     wrapperAnimation('.notice_wrapper');
-});
-
-
-$(document).ready(function(){
     wrapperAnimation('.alert_wrapper');
 });

@@ -10,6 +10,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    # for error msg
+    @comment = @post.comments.new
   end
 
   def new

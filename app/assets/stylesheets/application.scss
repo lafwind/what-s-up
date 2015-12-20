@@ -330,6 +330,7 @@ a.logo {
 .error_msg {
     margin: 0 auto;
     width: 50%;
+    font-size: .9rem;
 
     box-sizing: border-box !important;
     border: 1px $error solid;
@@ -340,13 +341,16 @@ a.logo {
         margin-top: 0;
     }
 
-    li {
-        padding-bottom: .5rem;
-    }
+    ul {
+        margin-bottom: 0;
 
-    // for devise error messages
+        li {
+            padding-bottom: .5rem;
+        }
+    }
 }
 
+// for devise error messages
 .devise_error_msg {
     margin: 0 auto;
     width: 60%;
