@@ -15,13 +15,27 @@
       <% if params[:action] == 'show' || params[:action] == 'groups' %>
         <%= link_to "Groups", groups_user_path, class: "selected" %>
         <%= link_to "Posts", posts_user_path %>
+        <%= link_to "Liked", liked_user_path %>
       <% elsif params[:action] == 'posts'  %>
         <%= link_to "Groups", groups_user_path %>
         <%= link_to "Posts", posts_user_path, class: "selected" %>
+        <%= link_to "Liked", liked_user_path %>
+      <% elsif params[:action] == 'liked' %>
+        <%= link_to "Groups", groups_user_path %>
+        <%= link_to "Posts", posts_user_path %>
+        <%= link_to "Liked", liked_user_path, class: "selected" %>
       <% end %>
     </div>
 
-    <% if params[:action] == "posts" %>
+    <% if params[:action] == "show" || params[:action]  == "groups"%>
+      <div class="groups">
+        <% @groups.each do |group| %>
+          <span><%= link_to "#{group.name}(#{group.posts.size})", user_group_path(@user, group) %></span>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if params[:action] == "posts" || params[:action] == "liked" %>
       <div class="posts">
         <% @posts.each do |post| %>
           <div class="post_detail">
@@ -38,17 +52,9 @@
         <div class="paginate">
           <%= will_paginate @posts %>
         </div>
-
       </div>
     <% end %>
 
-    <% if params[:action] == "show" || params[:action]  == "groups"%>
-      <div class="groups">
-        <% @groups.each do |group| %>
-          <span><%= link_to "#{group.name}(#{group.posts.size})", user_group_path(@user, group) %></span>
-        <% end %>
-      </div>
-    <% end %>
 
     <% if user_signed_in? && current_user  == @user %>
       <div class="some_buttons">

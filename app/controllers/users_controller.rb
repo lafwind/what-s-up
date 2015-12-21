@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :find_user, only: [ :show, :groups, :posts ]
+  before_action :find_user, only: [ :show, :groups, :posts, :liked ]
   before_action :find_groups, only: [ :show, :groups ]
 
   def show
@@ -12,6 +12,11 @@ class UsersController < ApplicationController
 
   def posts
     @posts = User.posts(@user).paginate(page: params[:page], per_page: 5)
+    render :show
+  end
+
+  def liked
+    @posts = Post.liked_by(@user).paginate(page: params[:page], per_page: 5)
     render :show
   end
 

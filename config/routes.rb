@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     member do
       get "groups", to: "users#groups"
       get "posts", to: "users#posts"
+      get "liked", to: "users#liked"
     end
     resources :groups do
     end

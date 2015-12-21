@@ -36,8 +36,14 @@ class Post < ActiveRecord::Base
   belongs_to :group
   has_many :comments, dependent: :destroy
 
-  scope :recent, ->{ where(share: true).order("created_at DESC") }
-  scope :active, ->{ where("share = ? and comments_count >= ?", true, 3) }
+  scope :recent, -> { where(share: true).order("created_at DESC") }
+  scope :active, -> { where("share = ? and comments_count >= ?", true, 3) }
+
+  scope :liked_by, -> (user) {
+    # array to ActiveRecord::Relation
+    posts_id = find_each.select { |post| user.voted_for? post }.map(&:id)
+    where(id: posts_id)
+  }
 
   self.per_page = 10
 
