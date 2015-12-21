@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     collection do
       get :recent
       get "active", to: "posts#active"
+      get "popular", to: "posts#popular"
     end
     member do
       get "like", to: "posts#like"

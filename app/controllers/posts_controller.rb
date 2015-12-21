@@ -52,11 +52,13 @@ class PostsController < ApplicationController
 
   def like
     @post.liked_by current_user
+    @post.update_attribute(:likes_count, @post.get_likes.size)
     redirect_to :back
   end
 
   def unlike
     @post.unliked_by current_user
+    @post.update_attribute(:likes_count, @post.get_likes.size)
     redirect_to :back
   end
 
@@ -72,6 +74,11 @@ class PostsController < ApplicationController
 
   def active
     @posts = Post.active.paginate(page: params[:page])
+    render action: :index
+  end
+
+  def popular
+    @posts = Post.popular.paginate(page: params[:page])
     render action: :index
   end
 
