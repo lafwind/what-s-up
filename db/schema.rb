@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20151221154727) do
     t.boolean  "share",          default: false
     t.integer  "group_id"
     t.integer  "comments_count", default: 0
-    t.integer  "likes_count"
+    t.integer  "likes_count",    default: 0
   end
 
   create_table "users", force: :cascade do |t|
