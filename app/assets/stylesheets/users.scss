@@ -101,6 +101,7 @@
 
     .user_detail {
         text-align: center;
+        margin-bottom: 1rem;
         .gravatar {
             img {
             }
@@ -112,6 +113,15 @@
 
         p.user_name {
             text-transform: capitalize;
+        }
+
+        .setting {
+            display: inline-block;
+            a {
+                color: $highlight;
+                font-size: .9rem;
+                text-decoration: none;
+            }
         }
     }
 

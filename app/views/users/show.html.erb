@@ -7,8 +7,13 @@
         <%= gravatar_for(@user) %>
       </div>
 
-      <p class="user_name"><%= @user.name %></p>
+      <p class="user_name">
+        <%= @user.name %>
+      </p>
       <p class="user_mail"><%= @user.email %></p>
+      <p class="setting">
+        <%= link_to "(setting)", edit_user_registration_path %>
+      </p>
     </div>
 
     <div class="bar">
