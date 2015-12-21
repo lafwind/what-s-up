@@ -10,9 +10,11 @@
       <p class="user_name">
         <%= @user.name %>
       </p>
-      <p class="user_mail"><%= @user.email %></p>
-      <p class="setting">
-        <%= link_to "(setting)", edit_user_registration_path %>
+      <p class="user_mail">
+        <%= @user.email %>
+        <%= link_to edit_user_registration_path do %>
+          <span class="fa fa-wrench"></span>
+        <% end %>
       </p>
     </div>
 

@@ -109,19 +109,17 @@
 
         p {
             margin-bottom: 0;
-        }
-
-        p.user_name {
-            text-transform: capitalize;
-        }
-
-        .setting {
-            display: inline-block;
             a {
+                display: inline-block;
+                padding-left: .5rem;
                 color: $highlight;
                 font-size: .9rem;
                 text-decoration: none;
             }
+        }
+
+        p.user_name {
+            text-transform: capitalize;
         }
     }
 
