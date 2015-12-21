@@ -27,7 +27,7 @@ class Post < ActiveRecord::Base
               message: "Invalid URL format!"
             }
 
-  validates :description, length: {
+  validates :description, presence: true, length: {
               maximum: 50,
               too_long: "%{count} characters is the maximum allowed"
             }
@@ -38,7 +38,7 @@ class Post < ActiveRecord::Base
 
   scope :recent, -> { where(share: true).order("created_at DESC") }
   scope :active, -> { where("share = ? and comments_count >= ?", true, 3) }
-  scope :popular, -> { order("likes_count DESC") }
+  scope :popular, -> { order(likes_count: :DESC, created_at: :DESC) }
 
   scope :liked_by, -> (user) {
     # array to ActiveRecord::Relation
