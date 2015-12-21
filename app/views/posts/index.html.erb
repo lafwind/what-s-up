@@ -1,15 +1,15 @@
 <div class="yield_content">
 
   <div class="bar">
-    <% if params[:action] == 'recent' %>
+    <% if match_action? 'recent' %>
       <%= link_to "Popular", popular_posts_path %>
       <%= link_to "Active", active_posts_path %>
       <%= link_to "Recent", recent_posts_path, class: "selected" %>
-    <% elsif params[:action] == 'active'  %>
+    <% elsif match_action? 'active'  %>
       <%= link_to "Popular", popular_posts_path %>
       <%= link_to "Active", active_posts_path, class: "selected" %>
       <%= link_to "Recent", recent_posts_path %>
-    <% elsif params[:action] == 'popular'  %>
+    <% elsif match_action? 'popular'  %>
       <%= link_to "Popular", popular_posts_path, class: "selected" %>
       <%= link_to "Active", active_posts_path %>
       <%= link_to "Recent", recent_posts_path %>

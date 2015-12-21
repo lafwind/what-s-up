@@ -20,4 +20,8 @@ module ApplicationHelper
     user_ids = comments.pluck(:user_id)
     user_ids.map { |id| User.find(id) }.zip(comments)
   end
+
+  def match_action?(action_name)
+    params[:action] == action_name.to_str
+  end
 end

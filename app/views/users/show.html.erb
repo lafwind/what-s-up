@@ -17,15 +17,15 @@
     </div>
 
     <div class="bar">
-      <% if params[:action] == 'show' || params[:action] == 'groups' %>
+      <% if match_action?('show') || match_action?('groups') %>
         <%= link_to "Groups", groups_user_path, class: "selected" %>
         <%= link_to "Posts", posts_user_path %>
         <%= link_to "Liked", liked_user_path %>
-      <% elsif params[:action] == 'posts'  %>
+      <% elsif match_action? 'posts'  %>
         <%= link_to "Groups", groups_user_path %>
         <%= link_to "Posts", posts_user_path, class: "selected" %>
         <%= link_to "Liked", liked_user_path %>
-      <% elsif params[:action] == 'liked' %>
+      <% elsif match_action? 'liked' %>
         <%= link_to "Groups", groups_user_path %>
         <%= link_to "Posts", posts_user_path %>
         <%= link_to "Liked", liked_user_path, class: "selected" %>
