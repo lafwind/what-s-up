@@ -38,5 +38,8 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true, length: { minimum: 6, maximum: 20 }
 
+  scope :groups, -> (user) { user.groups.order("created_at DESC") }
+  scope :posts, -> (user) { user.posts.order("created_at DESC")}
+
   acts_as_voter
 end

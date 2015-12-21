@@ -11,19 +11,44 @@
       <p class="user_mail"><%= @user.email %></p>
     </div>
 
-    <!-- <h3>Posts:</h3> -->
-
-    <!-- <% @posts.each do |post| %> -->
-    <!--   <%= render partial: 'shared/show_post', locals: { post: post } %> -->
-    <!-- <% end %> -->
-
-    <div class="groups">
-      <h3>Groups:</h3>
-
-      <% @groups.each do |group| %>
-        <span><%= link_to "#{group.name}(#{group.posts.size})", user_group_path(@user, group) %></span>
+    <div class="bar">
+      <% if params[:action] == 'show' || params[:action] == 'groups' %>
+        <%= link_to "Groups", groups_user_path, class: "selected" %>
+        <%= link_to "Posts", posts_user_path %>
+      <% elsif params[:action] == 'posts'  %>
+        <%= link_to "Groups", groups_user_path %>
+        <%= link_to "Posts", posts_user_path, class: "selected" %>
       <% end %>
     </div>
+
+    <% if params[:action] == "posts" %>
+      <div class="posts">
+        <% @posts.each do |post| %>
+          <div class="post_detail">
+            <div class="post_title">
+              <%= link_to post.title, format_url(post.url) %>
+            </div>
+            <span class="post_description"><%= post.description %></span>
+            <div class="post_action">
+              <%= render partial: "shared/post_action", locals: { post: post } %>
+            </div>
+          </div>
+        <% end %>
+
+        <div class="paginate">
+          <%= will_paginate @posts %>
+        </div>
+
+      </div>
+    <% end %>
+
+    <% if params[:action] == "show" || params[:action]  == "groups"%>
+      <div class="groups">
+        <% @groups.each do |group| %>
+          <span><%= link_to "#{group.name}(#{group.posts.size})", user_group_path(@user, group) %></span>
+        <% end %>
+      </div>
+    <% end %>
 
     <% if user_signed_in? && current_user  == @user %>
       <div class="some_buttons">

@@ -100,16 +100,74 @@
     }
 
     .user_detail {
-        padding-bottom: 2rem;
         text-align: center;
         .gravatar {
             img {
             }
         }
 
+        p {
+            margin-bottom: 0;
+        }
+
         p.user_name {
             text-transform: capitalize;
         }
+    }
+
+    .bar {
+        margin: 0 auto;
+        width: 50%;
+        text-align: center;
+        margin-bottom: 1rem;
+        border-bottom: 1px lighten($dark, 75%) solid;
+
+        a {
+            width: 4rem;
+            padding: 0;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .posts {
+        text-align: center;
+
+        a {
+            color: $highlight;
+        }
+
+        .post_detail {
+            margin-bottom: 1rem;
+            line-height: 2rem;
+
+            .post_title {
+                a {
+                    color: $dark;
+                    text-decoration: underline;
+                    &:hover {
+                        color: $highlight;
+                    }
+                }
+            }
+
+            .post_description {
+                color: lighten($dark, 23%);
+                display: inline-block;
+                line-height: 2rem;
+                font-size: .9rem;
+            }
+
+            .post_action {
+                color: lighten($dark, 10);
+                a {
+                    line-height: 2rem;
+                }
+            }
+        }
+
     }
 
     .groups {
@@ -126,7 +184,7 @@
             padding-left: .5rem;
 
             a {
-                color: $highlight;
+                color: lighten($dark, 23%);
 
                 &:hover {
                     text-decoration: underline;
