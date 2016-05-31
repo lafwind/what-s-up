@@ -10,7 +10,7 @@
 #  updated_at  :datetime         not null
 #
 
-class Group < ActiveRecord::Base
+class Group < ApplicationRecord
   validates :name, presence: true, length: { minimum: 2, maximum: 20 }
   validates :description, presence: true, length: { minimum: 6, maximum: 50 }
 

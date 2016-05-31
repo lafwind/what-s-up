@@ -13,7 +13,7 @@
 #  group_id    :integer
 #
 
-class Post < ActiveRecord::Base
+class Post < ApplicationRecord
   URL_REGEX = /\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?\z/
 
   validates :title, presence: true, length: {
