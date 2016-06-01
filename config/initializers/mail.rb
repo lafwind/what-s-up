@@ -1,10 +1,11 @@
 ActionMailer::Base.smtp_settings = {
-  address: 'smtp.mandrillapp.com',
+  address: 'smtp.gmail.com',
   port: 587,
-  enable_starttls_auto: true,
-  user_name: 'lafwind@gmail.com',
-  password: 'WcCQU2igpI9IIwnUPp6RmQ',
-  authentication: 'login'
+  domain: 'gmail.com',
+  user_name: 'ENV[user_name]',
+  password: 'ENV[password]',
+  authentication: 'plain',
+  enable_starttls_auto: true
 }
 
 ActionMailer::Base.delivery_method = :smtp
