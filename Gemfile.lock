@@ -109,6 +109,7 @@ GEM
     normalize-rails (4.1.1)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    puma (3.4.0)
     rack (2.0.0.rc1)
       json
     rack-contrib (1.2.0)
@@ -215,6 +216,7 @@ DEPENDENCIES
   meta_request
   normalize-rails
   pg (~> 0.18.4)
+  puma (~> 3.0)
   rails (>= 5.0.0.rc1, < 5.1)
   rails_12factor (~> 0.0.3)
   sass-rails (~> 5.0)
