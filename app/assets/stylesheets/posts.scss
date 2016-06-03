@@ -25,6 +25,7 @@
 
 .posts_content {
     color: lighten($dark, 39%);
+    min-width: 50rem;
 
     a {
         text-decoration: none;

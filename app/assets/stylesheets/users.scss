@@ -126,6 +126,7 @@
     .bar {
         margin: 0 auto;
         width: 50%;
+        min-width: 20rem;
         text-align: center;
         margin-bottom: 1rem;
         border-bottom: 1px lighten($dark, 75%) solid;

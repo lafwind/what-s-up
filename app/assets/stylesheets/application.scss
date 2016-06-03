@@ -21,6 +21,10 @@ $dark: #222222;
 $highlight: #2e9a50;
 $error: #dda5a5;
 
+html, body {
+    min-width: 60rem;
+}
+
 .notice_wrapper, .alert_wrapper {
     position: absolute;
     display: block;
