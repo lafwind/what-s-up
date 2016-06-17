@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0.rc1', '< 5.1'
 gem 'puma', '~> 3.0'
+gem 'pg', '~> 0.18.4'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -54,7 +55,6 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem 'sqlite3'
   gem 'meta_request'
   gem "better_errors"
   gem "binding_of_caller"
@@ -63,6 +63,5 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg', '~> 0.18.4'
   gem 'rails_12factor', '~> 0.0.3'
 end
