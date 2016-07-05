@@ -23,7 +23,14 @@ function wrapperAnimation(selector) {
     }, 1600);
 }
 
-$(document).ready(function(){
+// for turbolinks 5
+$(document).on('turbolinks:load', function() {
     wrapperAnimation('.notice_wrapper');
     wrapperAnimation('.alert_wrapper');
 });
+
+
+// $(document).ready(function(){
+//     wrapperAnimation('.notice_wrapper');
+//     wrapperAnimation('.alert_wrapper');
+// });
