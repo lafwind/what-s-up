@@ -42,7 +42,7 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  # config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -58,7 +58,20 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "what_s_up_#{Rails.env}"
   config.action_mailer.perform_caching = false
+
   config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: 'http://what-s-up.daoapp.io' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: ENV['SMTP_ADDRESS'],
+    port: ENV['SMTP_PORT'],
+    domain: ENV['SMTP_DOMAIN'],
+    user_name: ENV['SMTP_USER_NAME'],
+    password: ENV['SMTP_PASSWORD'],
+    authentication: :login
+  }
+  config.action_mailer.default charset: 'utf-8'
+
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -87,5 +100,4 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'https://what-s-up.herokuapp.com' }
 end
