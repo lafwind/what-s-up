@@ -20,6 +20,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  name                   :string
+#  role                   :string
 #
 
 class User < ApplicationRecord

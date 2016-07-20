@@ -2,15 +2,17 @@
 #
 # Table name: posts
 #
-#  id          :integer          not null, primary key
-#  title       :string
-#  url         :string
-#  description :text
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  user_id     :integer
-#  share       :boolean          default(FALSE)
-#  group_id    :integer
+#  id             :integer          not null, primary key
+#  title          :string
+#  url            :string
+#  description    :text
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  user_id        :integer
+#  share          :boolean          default(FALSE)
+#  group_id       :integer
+#  comments_count :integer          default(0)
+#  likes_count    :integer          default(0)
 #
 
 class Post < ApplicationRecord
@@ -40,6 +42,8 @@ class Post < ApplicationRecord
   scope :active, -> { where("share = ? and comments_count >= ?", true, 3) }
   scope :popular, -> { order(likes_count: :DESC, created_at: :DESC) }
 
+  scope :all_recent, -> (n) { order("created_at DESC").limit(n) }
+
   scope :liked_by, -> (user) {
     # array to ActiveRecord::Relation
     posts_id = find_each.select { |post| user.voted_for? post }.map(&:id)
@@ -49,4 +53,25 @@ class Post < ApplicationRecord
   self.per_page = 10
 
   acts_as_votable
+
+  column_name(User)
+  column_name(Group)
+
+  # def self.column_name(model)
+  #   model_format = model.to_s.downcase
+  #   method_name = model_format + '_name'
+  #   define_method(method_name) do
+  #     column = model_format + '_id'
+  #     model.find(self.send(column.to_sym)).name
+  #   end
+  # end
+
+
+  # def user_name
+  #   User.find(self.user_id).name
+  # end
+
+  # def group_name
+  #   Group.find(self.group_id).name
+  # end
 end
