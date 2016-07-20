@@ -34,6 +34,12 @@ gem 'figaro'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# admin-panel
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'cancancan'
+
+
 gem 'devise'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'will_paginate', '~> 3.1'
