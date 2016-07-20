@@ -12,7 +12,11 @@
  *
  *= require normalize-rails
  *= require font-awesome
- *= require_tree .
+ *= require comments
+ *= require groups
+ *= require posts
+ *= require users
+ *= require static_pages
  *= require_self
  */
 

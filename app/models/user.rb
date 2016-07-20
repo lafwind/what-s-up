@@ -42,4 +42,8 @@ class User < ApplicationRecord
   scope :posts, -> (user) { user.posts.order("created_at DESC")}
 
   acts_as_voter
+
+  def has_role?(role)
+    self.role == role
+  end
 end
